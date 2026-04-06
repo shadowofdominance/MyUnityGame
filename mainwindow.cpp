@@ -12,3 +12,21 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_selectProjectBtn_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushBtn_clicked()
+{
+
+}
+
+
+void MainWindow::on_commitBtn_clicked()
+{
+
+}
+

@@ -11,6 +11,10 @@ qt_add_executable(Tools_Programming_1
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    GitManager.h
+    ProjectManager.h
+    GitManager.cpp
+    ProjectManager.cpp
 )
 
 target_link_libraries(Tools_Programming_1
