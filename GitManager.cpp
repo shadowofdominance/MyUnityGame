@@ -25,4 +25,3 @@ QString GitManager::getStatus(QString path){
 
     return output;
 }
-

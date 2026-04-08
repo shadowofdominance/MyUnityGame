@@ -39,6 +39,8 @@ void MainWindow::on_selectProjectBtn_clicked()
 
     QString status = git.getStatus(folderPath);
 
+    updateFileTree(status);
+
     qDebug() << status;
 
 }
@@ -53,5 +55,30 @@ void MainWindow::on_pushBtn_clicked()
 void MainWindow::on_commitBtn_clicked()
 {
 
+}
+
+void MainWindow::updateFileTree(QString status)
+{
+    ui->fileChangesTreeWidget->clear();
+    QStringList lines = status.split("\n", Qt::SkipEmptyParts);
+
+    for(const QString & line : lines){
+
+
+        if(line.isEmpty())
+            continue;
+
+        QString fileStatus = line.left(2).trimmed();
+
+        QString fileName = line.mid(3).trimmed();
+
+        QTreeWidgetItem* item = new QTreeWidgetItem;
+
+        item->setText(0, fileStatus);
+        item->setText(1, fileName);
+
+        ui->fileChangesTreeWidget->addTopLevelItem(item);
+
+    }
 }
 

@@ -16,6 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void updateFileTree(QString status);
 
 private slots:
     void on_selectProjectBtn_clicked();
